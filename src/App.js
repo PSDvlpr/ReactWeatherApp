@@ -6,6 +6,14 @@ import Weather from './components/Weather';
 const API_KEY = '54c9652acba7ffc14be90f916d42b95c';
 
 class App extends Component {
+  state = {
+    temperature: '',
+    city: '',
+    country: '',
+    humidity: '',
+    descripton: '',
+    error: ''
+  }
 
   getWeather = async (e) => {
     e.preventDefault();
@@ -15,6 +23,14 @@ class App extends Component {
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${API_KEY}`);
     const data = await api_call.json();
     console.log(data);
+
+    this.setState( {
+      temperature: data.main.temp,
+      city: data.name,
+      country: data.sys.country,
+      humidity: data.main.humidity,
+      descripton: data.weather[0].descripton
+    });
   }
 
 
