@@ -45,7 +45,7 @@ class App extends Component {
 
 
   render() {
-    return (
+    return(
       <div>
         <Title />
         <Form getWeather={this.getWeather} />
@@ -57,7 +57,6 @@ class App extends Component {
           description={this.state.description}
           error={this.state.error} />
       </div>
-
     );
   }
 }
