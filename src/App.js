@@ -29,7 +29,7 @@ class App extends Component {
       city: data.name,
       country: data.sys.country,
       humidity: data.main.humidity,
-      descripton: data.weather[0].descripton
+      description: data.weather[0].description
     });
   }
 
@@ -44,7 +44,7 @@ class App extends Component {
           city={this.state.city}
           country={this.state.country}
           humidity={this.state.humidity}
-          descripton={this.state.descripton}
+          description={this.state.description}
           error={this.state.error} />
       </div>
 
